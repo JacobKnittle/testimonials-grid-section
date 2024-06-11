@@ -1,0 +1,283 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+	margin: 0;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	color: white;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+	-webkit-font-smoothing: antialiased;
+	background-color: #ecf2f8;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+	isolation: isolate;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+.center-container {
+	display: grid;
+	place-items: center;
+}
+
+.content-container {
+	display: grid;
+	max-width: 327px;
+}
+
+.card {
+	border-radius: 8px;
+	margin-bottom: 24px;
+}
+
+div img {
+	width: 28px;
+	height: 28px;
+	border-radius: 999px;
+
+	margin-right: 17px;
+}
+
+.author-info {
+	display: flex;
+	align-items: center;
+}
+
+.author-text {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.author-name {
+	font-size: 1.3rem;
+	line-height: 1.3rem;
+	font-weight: 500;
+}
+
+.verified {
+	font-weight: 1.1rem;
+	line-height: 1.1rem;
+	opacity: 50%;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+p {
+	font-size: 1.3rem;
+	line-height: 1.8rem;
+	opacity: 70%;
+}
+
+.daniel-testimony {
+	position: relative;
+	max-height: 444px;
+	max-width: 327px;
+	background-color: #733fc8;
+	border-radius: 6px;
+	padding: 26px 32px 32px 32px;
+	margin-bottom: 27px;
+}
+
+.daniel-avatar {
+	border: 3px solid #a775f1;
+}
+
+.daniel-testimony h2 {
+	margin-top: 18px;
+	margin-bottom: 40px;
+	position: relative;
+	z-index: 10;
+}
+
+.quotes {
+	position: absolute;
+	height: 102px;
+	width: 104px;
+	border-radius: 0;
+	top: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.jonathan-testimony {
+	background-color: #48556a;
+	border-radius: 8px;
+	padding: 26px 32px 32px 32px;
+}
+
+.jonathan-testimony .author-info {
+	margin-bottom: 18px;
+}
+
+.jonathan-testimony h2 {
+	margin-bottom: 16px;
+}
+.jonathan-testimony p {
+	font-size: 1.3rem;
+	line-height: 18px;
+	font-weight: 500;
+}
+
+.jeanette-testimony {
+	background-color: white;
+	max-width: 327px;
+	max-height: 222px;
+	padding: 26px 32px 32px 32px;
+}
+
+.jeanette-testimony .author-info {
+	margin-bottom: 18px;
+}
+
+.jeanette-testimony .author-name,
+.jeanette-testimony .verified {
+	color: #48556a;
+}
+.jeanette-testimony h2 {
+	background-color: white;
+	color: #48556a;
+	margin-bottom: 16px;
+}
+.jeanette-testimony p {
+	background-color: white;
+	color: #48556a;
+}
+
+.patrick-testimony {
+	background-color: #19202d;
+	border-radius: 8px;
+	padding: 26px 32px 32px 32px;
+}
+
+.patrick-testimony img {
+	border: 2px solid #a775f1;
+}
+
+.patrick-testimony .author-info {
+	margin-bottom: 18px;
+}
+
+.patrick-testimony h2 {
+	font-weight: 600;
+	margin-bottom: 16px;
+}
+
+.kira-testimony {
+	background-color: white;
+
+	padding: 26px 32px 32px 32px;
+}
+
+.kira-testimony .author-info {
+	margin-bottom: 18px;
+}
+
+.kira-testimony .author-name,
+.kira-testimony .verified {
+	color: #48556a;
+}
+.kira-testimony h2 {
+	background-color: white;
+	color: #48556a;
+	margin-bottom: 16px;
+}
+.kira-testimony p {
+	background-color: white;
+	color: #48556a;
+}
+
+@media screen and (min-width: 1100px) {
+	.content-container {
+		padding-top: 50px;
+		max-width: 1100px;
+		max-height: 580px;
+		column-gap: 30px;
+		row-gap: 16px;
+		grid-template-areas:
+			'Daniel Daniel Daniel Daniel Jonathan Kira'
+			'Jeanette Patrick Patrick Patrick Patrick Kira';
+	}
+
+	.daniel-testimony {
+		grid-area: Daniel;
+		max-width: none;
+		max-height: none;
+	}
+	.jonathan-testimony {
+		grid-area: Jonathan;
+		max-width: none;
+		max-height: none;
+	}
+	.kira-testimony {
+		grid-area: Kira;
+		max-width: none;
+		max-height: none;
+	}
+
+	.jeanette-testimony {
+		grid-area: Jeanette;
+		max-width: none;
+		max-height: none;
+	}
+	.patrick-testimony {
+		grid-area: Patrick;
+		max-width: none;
+		max-height: none;
+	}
+}
